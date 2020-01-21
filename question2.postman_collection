@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "b2ea0322-c25f-40c5-b6c1-60f943247bd2",
+		"name": "clearscoreV2",
+		"description": "Question 2 of clear score tests. Login form API test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "question 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "280efaf4-8e53-49fc-b25f-e47593edf790",
+						"exec": [
+							"//setting variable name for email and password",
+							"",
+							"pm.environment.set(\"email\", \"jsdsds.appru@gmail.com\");",
+							"pm.environment.set(\"password\", \"haha123Q\");",
+							"",
+							"pm.test(\"status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"pm.test(\"Error is present\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"error\");",
+							"});",
+							"",
+							"pm.test(\"error should read access_denied\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.error).to.eql(\"access_denied\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "app.clearscore.com"
+					},
+					{
+						"key": "x-instana-t",
+						"value": "638a5ad2683f970c"
+					},
+					{
+						"key": "origin",
+						"value": "https://app.clearscore.com"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer undefined"
+					},
+					{
+						"key": "x-instana-l",
+						"value": "1"
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "x-cs-device",
+						"value": "desktop_windows"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"
+					},
+					{
+						"key": "x-instana-s",
+						"value": "638a5ad2683f970c"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "referer",
+						"value": "https://app.clearscore.com/login"
+					},
+					{
+						"key": "accept-encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "cookie",
+						"value": "__cfduid=dfe356fc21375f6b77e4ec54e41457a1d1579452727; ajs_user_id=null; ajs_group_id=null; ajs_anonymous_id=%22a25d5702-0d27-4454-937b-b01b9ccdc8e2%22; CS_VISITED_SITE=a25d5702-0d27-4454-937b-b01b9ccdc8e2; _gcl_au=1.1.1275011968.1579452735; _ga=GA1.2.1025731672.1579452735; _gid=GA1.2.1215416106.1579452735; _fbp=fb.1.1579452735016.651044323; CS_PERSON=a25d5702-0d27-4454-937b-b01b9ccdc8e2; _gcl_aw=GCL.1579530299.Cj0KCQiAvJXxBRCeARIsAMSkApoPsW0g8sP07G2GEp5WfcsoS8NHfa8s9N3Kegkb76rTqp7NADiKspQaAiliEALw_wcB; _gcl_dc=GCL.1579530299.Cj0KCQiAvJXxBRCeARIsAMSkApoPsW0g8sP07G2GEp5WfcsoS8NHfa8s9N3Kegkb76rTqp7NADiKspQaAiliEALw_wcB; _gac_UA-59053597-1=1.1579530302.Cj0KCQiAvJXxBRCeARIsAMSkApoPsW0g8sP07G2GEp5WfcsoS8NHfa8s9N3Kegkb76rTqp7NADiKspQaAiliEALw_wcB; _mitata=YjRiMjc5ZTU0MDU3ZjYwMzMwODA4YjI1NjAzOWMwOTI5YjA5NzgwOGQ3YmY2NDRkZTgzMGJiZmY2ZDlmMzIwYg==_/@#/1579530361_/@#/mpj3n21ez0hphaks_/@#/000; CS_ANONYMOUS_ID=b7283f3c-a454-529e-d75d-702abb013520; sc.InTg=a; sc.ASP.NET_SESSIONID=lg0shclka12hxpo2bm23mpfg"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"response_type\": \"code\",\n    \"client_type\": \"internal\",\n    \"client_id\": \"cs-webapp\",\n    \"device_id\": \"965c0d066a666a8acb969928b582ea5c\",\n    \"device_type\": \"desktop_windows\",\n    \"device_name\": \"Windows Chrome\",\n    \"email\": \"{{email}}\",\n    \"password\": \"{{password}}\",\n    \"anonymous_id\": \"b7283f3c-a454-529e-d75d-702abb013520\"\n}"
+				},
+				"url": {
+					"raw": "https://app.clearscore.com/api/global/login-service/v3/authorise",
+					"protocol": "https",
+					"host": [
+						"app",
+						"clearscore",
+						"com"
+					],
+					"path": [
+						"api",
+						"global",
+						"login-service",
+						"v3",
+						"authorise"
+					]
+				},
+				"description": "one bex did"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
