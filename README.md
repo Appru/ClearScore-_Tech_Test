@@ -2,7 +2,7 @@
 
 Questions one and three are written in Javascript using the  **Cypress** framework.
 
-Question Two is was created with the API testing tool **Postman**
+Question Two is was created with the API testing tool **Postman**. So please download the file and Import using the Postman app.
 
 
 **Here are the answers to the Additional Questions:**
