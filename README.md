@@ -15,7 +15,7 @@ I would use a tool called “bamboo” which monitors the code repository and wh
 * write the tests in a way that they can be run from a command line so that you can automatically run the tests  
 * also have an internal public display so that everyone can view the state of the software
   
-**2. How would you approach running the same tests across mobile devices and different browsers?**
+**2. How would you approach running the same tests across mobile devices and different browsers?**  <br />
 I would use a tool called appium. This would enable myself to write my tests against multiple platforms. Using the same API
 
 **3. If you had more time available, are there any improvements that you would make to the code provided?**
